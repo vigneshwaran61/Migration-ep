@@ -1,0 +1,16 @@
+
+SET QUOTED_IDENTIFIER ON
+CREATE TABLE [dbo].[t_Service_mst](
+      [ServiceCode] [int] NULL,
+      [Servicename] [varchar](50) NULL
+) ON [PRIMARY]
+
+INSERT [dbo].[t_Service_mst] ([ServiceCode], [Servicename]) VALUES (1, N'ProjectResource');
+
+INSERT [dbo].[t_Service_mst] ([ServiceCode], [Servicename]) VALUES (2, N'OnGoingResource');
+
+INSERT [dbo].[t_Service_mst] ([ServiceCode], [Servicename]) VALUES (3, N'LimitedDurationResource');
+
+INSERT [dbo].[t_Service_mst] ([ServiceCode], [Servicename]) VALUES (4, N'StandByResource');
+
+INSERT [dbo].[t_Service_mst] ([ServiceCode], [Servicename]) VALUES (5, N'StandardResourcing');
