@@ -1,0 +1,44 @@
+
+CREATE TABLE [dbo].[t_year](
+      [f_Sr_No] [bigint] IDENTITY(1,1) NOT NULL,
+      [f_Year] [nvarchar](50) NULL,
+      [f_Year_No] [bigint] NULL,
+      [f_Active_Flag] [bit] NULL,
+      [f_CreatedID] [nvarchar](20) NULL,
+      [f_CreatedType] [nvarchar](3) NULL,
+      [f_UpdatedID] [nvarchar](20) NULL,
+      [f_UpdatedType] [nvarchar](3) NULL
+) ON [PRIMARY];
+
+
+
+
+SET IDENTITY_INSERT [dbo].[t_year] ON
+
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (1, N'2010', 1, 0, NULL, NULL, NULL, NULL)
+;
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (2, N'2011', 2, 1, NULL, NULL, NULL, NULL)
+;
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (3, N'2012', 3, 1, NULL, NULL, NULL, NULL)
+;
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (4, N'2013', 4, 1, NULL, NULL, NULL, NULL)
+;
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (5, N'2014', 5, 1, NULL, NULL, NULL, NULL)
+;
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (6, N'2015', 6, 1, NULL, NULL, NULL, NULL)
+;
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (7, N'2016', 7, 1, NULL, NULL, NULL, NULL)
+;
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (8, N'2017', 8, 1, NULL, NULL, NULL, NULL)
+;
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (9, N'2018', 9, 1, NULL, NULL, NULL, NULL)
+;
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (10, N'2019', 10, 1, NULL, NULL, NULL, NULL)
+;
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (11, N'2020', 11, 0, NULL, NULL, NULL, NULL)
+;
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (12, N'2021', 12, 0, NULL, NULL, NULL, NULL)
+;
+;INSERT [dbo].[t_year] ([f_Sr_No], [f_Year], [f_Year_No], [f_Active_Flag], [f_CreatedID], [f_CreatedType], [f_UpdatedID], [f_UpdatedType]) VALUES (13, N'2025', 16, 1, N'SYS', N'SYS', NULL, NULL)
+;
+SET IDENTITY_INSERT [dbo].[t_year] OFF

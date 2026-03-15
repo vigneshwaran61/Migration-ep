@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Vendor Management System</title>
+    <link rel="stylesheet" href="~/Content/VENDOR_MGMT.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+</head>
+<body>
+    <!-- ═══ Header — mirrors SYS_VEN_MST.Master header ══════════════════════ -->
+    <div id="divHeader" style="background-color:#003366; color:white; padding:5px; font-family:Verdana; font-size:11pt; font-weight:bold;">
+        <table width="100%">
+            <tr>
+                <td align="left">
+                    <img src="~/Images/MahindraLogo.bmp" style="height:50px;" alt="Mahindra Logo" />
+                </td>
+                <td align="center">
+                    <span id="lblAppName">Vendor Management System</span>
+                </td>
+                <td align="right">
+                    <a href="@(ViewData["LogoutUrl"] ?? "/Home/Logout")"
+                       style="color:white; font-size:9pt; text-decoration:none;">Logout</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ═══ Navigation menu placeholder ════════════════════════════════════ -->
+    <div id="divMenu" style="background-color:#6699CC; padding:3px;">
+        <a href="~/Home/Index" style="color:white; font-family:Verdana; font-size:9pt; margin-right:10px;">Home</a>
+        <a href="~/Reports/MonthlyPaymentReport" style="color:white; font-family:Verdana; font-size:9pt; margin-right:10px;">Monthly Payment Report</a>
+    </div>
+
+    <!-- ═══ Form name bar ═══════════════════════════════════════════════════ -->
+    <div id="divFormName" style="background-color:#CCCCCC; padding:3px; font-family:Verdana; font-size:9pt; font-weight:bold;">
+        @ViewData["Title"]
+    </div>
+
+    <!-- ═══ Error message strip (replaces Master Page lblErrormsg Label) ════ -->
+    @if (TempData["ErrorMsg"] is string layoutErr && !string.IsNullOrEmpty(layoutErr))
+    {
+        <div id="layoutErrorMsg" style="color:red; font-family:Verdana; font-size:9pt; padding:4px;">
+            @layoutErr
+        </div>
+    }
+
+    <!-- ═══ Main content area ═══════════════════════════════════════════════ -->
+    <div id="divContent" style="padding:10px;">
+        @RenderBody()
+    </div>
+
+    <!-- ═══ Footer ══════════════════════════════════════════════════════════ -->
+    <div id="divFooter" style="background-color:#003366; color:white; font-family:Verdana; font-size:8pt; text-align:center; padding:4px;">
+        &copy; @DateTime.Now.Year Mahindra &amp; Mahindra Financial Services Ltd. All rights reserved.
+    </div>
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
