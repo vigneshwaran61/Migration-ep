@@ -1,0 +1,64 @@
+using System;
+using System.IO;
+using System.Net;
+
+class Program
+{
+    static string UPLOAD_DIR = ".";
+
+    static void Main()
+    {
+        HttpListener listener = new HttpListener();
+        listener.Prefixes.Add("http://0.0.0.0:9090/");
+        listener.Start();
+
+        Console.WriteLine("Server running on port 9090...");
+
+        while (true)
+        {
+            HttpListenerContext context = listener.GetContext();
+
+            if (context.Request.HttpMethod == "POST")
+            {
+                HandlePost(context);
+            }
+            else
+            {
+                context.Response.StatusCode = 405;
+                context.Response.Close();
+            }
+        }
+    }
+
+    static void HandlePost(HttpListenerContext context)
+    {
+        try
+        {
+            string filename =
+                context.Request.Headers["X-Filename"] ?? "uploaded_file";
+
+            string filepath = Path.Combine(UPLOAD_DIR, filename);
+
+            using (FileStream fs = new FileStream(filepath, FileMode.Create))
+            {
+                context.Request.InputStream.CopyTo(fs);
+            }
+
+            string responseText = "Upload successful";
+            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseText);
+
+            context.Response.StatusCode = 200;
+            context.Response.OutputStream.Write(buffer, 0, buffer.Length);
+            context.Response.Close();
+
+            Console.WriteLine($"Received file: {filename}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+
+            context.Response.StatusCode = 500;
+            context.Response.Close();
+        }
+    }
+}
